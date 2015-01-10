@@ -8,6 +8,8 @@ data<-subset(mydata,Date=="2/2/2007" | Date=="1/2/2007")
 data$newdate<-paste(data$Date, data$Time, sep=" ")
 
 #Create Graph
+#The system is installed in Spanish , therefore , days of the week are written also in Spanish
+#Jue=Thu, Vie=Fri, Sab=Sat
 png(file = "plot3.png", width = 480, height = 480)
 plot(strptime(data$newdate, "%d/%m/%Y %T" ), data$Sub_metering_1,type = "n", xlab="", ylab="Energy sub metering")
 lines(strptime(data$newdate, "%d/%m/%Y %T" ),data$Sub_metering_1, col="black")
